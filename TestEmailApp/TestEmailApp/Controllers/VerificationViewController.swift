@@ -62,7 +62,12 @@ class VerificationViewController: UIViewController {
 
 extension VerificationViewController: SelectProposedMailProtocol {
     func selectProposedMail(indexPath: IndexPath) {
-        print(indexPath)
+        guard let text = mailTextField.text else { return }
+        verificationModel.getMailName(text: text)
+        let domainMail = verificationModel.filtredMailArray[indexPath.row]
+        let mailFullName = verificationModel.nameMail + domainMail
+        mailTextField.text = mailFullName
+        print(mailFullName)
     }
 }
 
@@ -70,7 +75,8 @@ extension VerificationViewController: SelectProposedMailProtocol {
 
 extension VerificationViewController: ActionsMailTextFieldProtocol {
     func typingText(text: String) {
-        print(text)
+        verificationModel.getFiltredMail(text: text)
+        collectionView.reloadData()
     }
     
     func cleanOutTextField() {
@@ -89,6 +95,9 @@ extension VerificationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdCell.idMailCell.rawValue, for: indexPath) as? MailCollectionViewCell
         else { return UICollectionViewCell() }
+        
+        let mailLableText = verificationModel.filtredMailArray[indexPath.row]
+        cell.cellConfigure(mailLableText: mailLableText)
         return cell
     }
 }

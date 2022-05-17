@@ -10,7 +10,7 @@ import Foundation
 class VerificationModel {
     private let mailsArray = ["@gmail.com", "@yahoo.com", "@yahoo.ua", "@yandex.com", "@yandex.ua"]
     
-    public var nameMails = String()
+    public var nameMail = String()
     public var filtredMailArray = [String]()
     
     private func filtringMails(text: String) {
@@ -30,7 +30,20 @@ class VerificationModel {
             }
         }
     }
+    
+    public func deriveNameMail(text: String) {
+        guard let atSimbolIndex = text.firstIndex(of: "@") else { return }
+        let endIndex = text.index(before: atSimbolIndex)
+        let firstIndex = text.startIndex
+        let range = text[firstIndex...endIndex]
+        nameMail = String(range)
+    }
+    
     public func getFiltredMail(text: String) {
         filtringMails(text: text)
+    }
+    
+    public func getMailName(text: String) {
+        deriveNameMail(text: text)
     }
 }
