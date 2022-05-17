@@ -1,0 +1,36 @@
+//
+//  VerificationModel.swift
+//  TestEmailApp
+//
+//  Created by Михаил Фролов on 17.05.2022.
+//
+
+import Foundation
+
+class VerificationModel {
+    private let mailsArray = ["@gmail.com", "@yahoo.com", "@yahoo.ua", "@yandex.com", "@yandex.ua"]
+    
+    public var nameMails = String()
+    public var filtredMailArray = [String]()
+    
+    private func filtringMails(text: String) {
+        var domainMail = String()
+        filtredMailArray = []
+        
+        guard let firstIndex = text.firstIndex(of: "@") else { return }
+        let endIndex = text.index(before: text.endIndex)
+        let range = text[firstIndex...endIndex]
+        domainMail = String(range)
+        
+        mailsArray.forEach { mail in
+            if mail.contains(domainMail) {
+                if !filtredMailArray.contains(mail) {
+                    filtredMailArray.append(mail)
+                }
+            }
+        }
+    }
+    public func getFiltredMail(text: String) {
+        filtringMails(text: text)
+    }
+}

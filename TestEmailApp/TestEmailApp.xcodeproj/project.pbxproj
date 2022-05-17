@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930140AE2833ABCB00C16023 /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930140AD2833ABCB00C16023 /* VerificationModel.swift */; };
+		930140B12833B1E500C16023 /* MailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930140B02833B1E500C16023 /* MailTextField.swift */; };
 		93A55F15282EA58B00D65EFA /* MailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A55F14282EA58B00D65EFA /* MailCollectionView.swift */; };
 		93A55F19282EA6A800D65EFA /* MailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A55F18282EA6A800D65EFA /* MailCollectionViewCell.swift */; };
 		93EE4EA4282A8F4000DAAD12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE4EA3282A8F4000DAAD12 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930140AD2833ABCB00C16023 /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
+		930140B02833B1E500C16023 /* MailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTextField.swift; sourceTree = "<group>"; };
 		93A55F14282EA58B00D65EFA /* MailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCollectionView.swift; sourceTree = "<group>"; };
 		93A55F18282EA6A800D65EFA /* MailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCollectionViewCell.swift; sourceTree = "<group>"; };
 		93EE4EA0282A8F4000DAAD12 /* TestEmailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestEmailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +83,7 @@
 		93EE4EB9282A944D00DAAD12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				930140AD2833ABCB00C16023 /* VerificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			children = (
 				93A55F17282EA69300D65EFA /* Cells */,
 				93A55F14282EA58B00D65EFA /* MailCollectionView.swift */,
+				930140B02833B1E500C16023 /* MailTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,8 +191,10 @@
 			files = (
 				93EE4EC0282A962A00DAAD12 /* VerificationViewController.swift in Sources */,
 				93A55F15282EA58B00D65EFA /* MailCollectionView.swift in Sources */,
+				930140B12833B1E500C16023 /* MailTextField.swift in Sources */,
 				93A55F19282EA6A800D65EFA /* MailCollectionViewCell.swift in Sources */,
 				93EE4EA4282A8F4000DAAD12 /* AppDelegate.swift in Sources */,
+				930140AE2833ABCB00C16023 /* VerificationModel.swift in Sources */,
 				93EE4EA6282A8F4000DAAD12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
