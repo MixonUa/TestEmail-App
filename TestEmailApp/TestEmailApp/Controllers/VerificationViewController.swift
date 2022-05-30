@@ -35,21 +35,44 @@ class VerificationViewController: UIViewController {
         
     }
     
+    public func setDefaultLayerSettings() {
+        informationTextLabel.text = "Check your mail"
+        informationTextLabel.textColor = .black
+    }
+    
+    public func setDefaultButtonSettings() {
+        verificationButton.layer.cornerRadius = 8
+        verificationButton.isEnabled = false
+        verificationButton.alpha = 0.5
+    }
+    
     private func setupViews() {
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
         view.addSubview(collectionView)
         view.addSubview(mailTextField)
-        
-        verificationButton.layer.cornerRadius = 8
-        verificationButton.isEnabled = false
-        verificationButton.alpha = 0.5
+        setDefaultLayerSettings()
+        setDefaultButtonSettings()
     }
     
     private func setDelegates() {
         collectionView.dataSource = self
         collectionView.selectMailDelegate = self
         mailTextField.textFieldDelegate = self
+    }
+    
+    private func mailValidation(text: Bool) {
+        if text {
+            informationTextLabel.text = "Mail is valid"
+            informationTextLabel.textColor = .green
+            verificationButton.isEnabled = true
+            verificationButton.alpha = 1
+        } else {
+            informationTextLabel.text = "Mail is not valid. Example: name@domain.ua"
+            informationTextLabel.textColor = .red
+            verificationButton.isEnabled = false
+            verificationButton.alpha = 0.5
+        }
     }
     
     @IBAction func VerificationButtonDidPressed(_ sender: Any) {
@@ -75,12 +98,15 @@ extension VerificationViewController: SelectProposedMailProtocol {
 
 extension VerificationViewController: ActionsMailTextFieldProtocol {
     func typingText(text: String) {
+        mailValidation(text: text.isValid())
+        
         verificationModel.getFiltredMail(text: text)
         collectionView.reloadData()
     }
     
     func cleanOutTextField() {
-        print("clear")
+        setDefaultLayerSettings()
+        setDefaultButtonSettings()
     }
     
 }
