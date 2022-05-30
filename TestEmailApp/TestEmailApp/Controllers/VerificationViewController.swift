@@ -90,7 +90,9 @@ extension VerificationViewController: SelectProposedMailProtocol {
         let domainMail = verificationModel.filtredMailArray[indexPath.row]
         let mailFullName = verificationModel.nameMail + domainMail
         mailTextField.text = mailFullName
-        print(mailFullName)
+        mailValidation(text: mailFullName.isValid())
+        verificationModel.filtredMailArray = []
+        collectionView.reloadData()
     }
 }
 
@@ -107,6 +109,8 @@ extension VerificationViewController: ActionsMailTextFieldProtocol {
     func cleanOutTextField() {
         setDefaultLayerSettings()
         setDefaultButtonSettings()
+        verificationModel.filtredMailArray = []
+        collectionView.reloadData()
     }
     
 }
