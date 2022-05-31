@@ -80,16 +80,22 @@ class VerificationViewController: UIViewController {
         NetworkDataFetch.shared.fetchMail(verifiableMail: mail) { (result, error) in
             if error == nil {
                 guard let result = result else { return }
-                if result.succes {
-                    print("good")
+                if result.success {
+                    guard let didYouMeanError = result.did_you_mean else {
+                        Alert.showResultAlert(vc: self, message: "Mail status \(result.result) \n \(result.reasonDescription)")
+                        return
+                    }
+                    Alert.showErrorAlert(vc: self, message: "Did you mean \(didYouMeanError)") { [weak self] in
+                        guard let self = self else { return }
+                        self.mailTextField.text = didYouMeanError
+                    }
+                } else {
+                    guard let errorDiscription = error?.localizedDescription else { return }
+                    Alert.showResultAlert(vc: self, message: errorDiscription)
                 }
-            } else {
-                guard let errorDiscription = error?.localizedDescription else { return }
-                print("error")
             }
         }
     }
-    
 }
 
 //MARK: - SelectProposedMailProtocol

@@ -18,7 +18,7 @@ class NetworkDataFetch {
                 do {
                     let mail = try JSONDecoder().decode(MailResponseModel.self, from: data)
                     response(mail, nil)
-                } catch let jsonError{
+                } catch let jsonError {
                     print("Failed to decode", jsonError)
                 }
             case .failure(let error):

@@ -11,7 +11,7 @@ struct MailResponseModel: Decodable {
     let result: String
     let reason: String
     let did_you_mean: String?
-    let succes: Bool
+    let success: Bool
     
     var reasonDescription: String {
         switch reason {

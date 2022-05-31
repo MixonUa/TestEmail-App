@@ -22,6 +22,7 @@
 		93EE4EAD282A8F4200DAAD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE4EAC282A8F4200DAAD12 /* Assets.xcassets */; };
 		93EE4EB0282A8F4200DAAD12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE4EAE282A8F4200DAAD12 /* LaunchScreen.storyboard */; };
 		93EE4EC0282A962A00DAAD12 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE4EBF282A962A00DAAD12 /* VerificationViewController.swift */; };
+		93F76DBB2846373B00329E40 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F76DBA2846373B00329E40 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		93EE4EAF282A8F4200DAAD12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93EE4EB1282A8F4200DAAD12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EE4EBF282A962A00DAAD12 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		93F76DBA2846373B00329E40 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				93A55F17282EA69300D65EFA /* Cells */,
 				93A55F14282EA58B00D65EFA /* MailCollectionView.swift */,
 				930140B02833B1E500C16023 /* MailTextField.swift */,
+				93F76DBA2846373B00329E40 /* Alerts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				93A37A5B2844DFF900A28CCE /* MailApiKey.swift in Sources */,
 				93A37A662844EB5E00A28CCE /* NetworkDataFetch.swift in Sources */,
 				93A37A612844E48E00A28CCE /* MailResponseModel.swift in Sources */,
+				93F76DBB2846373B00329E40 /* Alerts.swift in Sources */,
 				930140AE2833ABCB00C16023 /* VerificationModel.swift in Sources */,
 				93A37A552844CE8900A28CCE /* String + Extensions.swift in Sources */,
 				93EE4EA6282A8F4000DAAD12 /* SceneDelegate.swift in Sources */,
