@@ -7,9 +7,11 @@
 
 import Foundation
 
-class NetworkManager {
-    static let shared = NetworkManager()
-    private init() {}
+protocol NetworkDataProvider {
+    func requestData(verifiableMail: String, completion: @escaping(Result<Data, Error>) -> Void)
+}
+
+class NetworkManager: NetworkDataProvider {
     
     func requestData(verifiableMail: String, completion: @escaping(Result<Data, Error>) -> Void) {
                         let urlString = "https://api.kickbox.com/v2/verify?email=\(verifiableMail)&apikey=\(apiKey)"

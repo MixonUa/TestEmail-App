@@ -8,11 +8,14 @@
 import Foundation
 
 class NetworkDataFetch {
-    static let shared = NetworkDataFetch()
-    private init() {}
+    let networkManager: NetworkManager
+    
+    init(networkManager:NetworkManager = NetworkManager()){
+        self.networkManager = networkManager
+    }
     
     func fetchMail(verifiableMail: String, response: @escaping(MailResponseModel?, Error?) -> Void) {
-        NetworkManager.shared.requestData(verifiableMail: verifiableMail) { result in
+        networkManager.requestData(verifiableMail: verifiableMail) { result in
             switch result {
             case .success(let data):
                 do {
