@@ -11,6 +11,8 @@ class VerificationViewController: UIViewController {
     @IBOutlet weak var informationTextLabel: UILabel!
     @IBOutlet weak var verificationButton: UIButton!
     
+    let netwokrManager = NetworkDataFetch()
+    
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "background")
@@ -77,7 +79,7 @@ class VerificationViewController: UIViewController {
     
     @IBAction func VerificationButtonDidPressed(_ sender: Any) {
         guard let mail = mailTextField.text else { return }
-        NetworkDataFetch.shared.fetchMail(verifiableMail: mail) { (result, error) in
+        netwokrManager.fetchMail(verifiableMail: mail) { (result, error) in
             if error == nil {
                 guard let result = result else { return }
                 if result.success {
